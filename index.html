@@ -3,35 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Weather App</title>
+    <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="app-container">
+        <header>
+            <input type="text" id="city-input" placeholder="Enter city name..." autocomplete="off">
+            <button id="search-btn">Search</button>
+        </header>
 
-<div class="weather-card">
-    <div class="search-box">
-        <input type="text" placeholder="Enter city name..." spellcheck="false">
-        <button>Search</button>
+        <main id="weather-content" class="hidden">
+            <section class="current-weather">
+                <h1 id="city-name">--</h1>
+                <div class="temp-box">
+                    <span id="current-temp">--</span>°C
+                </div>
+                <p id="weather-desc">--</p>
+                <div class="details">
+                    <p>Wind: <span id="wind-speed">--</span> km/h</p>
+                </div>
+            </section>
+
+            <section class="forecast">
+                <h2>7-Day Forecast</h2>
+                <div class="forecast-grid" id="forecast-grid">
+                    <!-- Forecast cards injected via JS -->
+                </div>
+            </section>
+        </main>
+        
+        <div id="error-message" class="hidden">City not found. Try again.</div>
     </div>
-
-    <div class="weather-info">
-        <div class="weather-icon">☀️</div>
-        <h1 class="temperature">44°C</h1>
-        <h2 class="city">Delhi</h2>
-        <p class="description">Clear Sky</p>
-    </div>
-
-    <div class="weather-details">
-        <div class="detail-col">
-            <span class="detail-label">Humidity</span>
-            <span class="detail-value">45%</span>
-        </div>
-        <div class="detail-col">
-            <span class="detail-label">Wind Speed</span>
-            <span class="detail-value">12 km/h</span>
-        </div>
-    </div>
-</div>
-
+    
+    <script src="script.js"></script>
 </body>
 </html>
